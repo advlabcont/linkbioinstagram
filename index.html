@@ -201,6 +201,24 @@
   .link-card.teal:hover{ box-shadow: 0 10px 28px rgba(52,232,176,0.13); }
   .link-card.blue{ border-color: rgba(79,143,255,0.32); }
   .link-card.blue:hover{ box-shadow: 0 10px 28px rgba(79,143,255,0.13); }
+  .link-card.amber{ border-color: rgba(245,185,66,0.32); }
+  .link-card.amber:hover{ box-shadow: 0 10px 28px rgba(245,185,66,0.13); }
+
+  .badge-new{
+    display:inline-flex; align-items:center;
+    background: linear-gradient(120deg, #F5B942, #F58A42);
+    color: #1A1207;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+    box-shadow: 0 3px 10px rgba(245,185,66,0.35);
+    animation: pulse 2s ease-in-out infinite;
+  }
 
   .link-icon{
     flex-shrink:0; width:44px; height:44px; border-radius:12px;
@@ -210,12 +228,14 @@
   .link-icon svg{ width:21px; height:21px; }
   .teal .link-icon svg{ stroke: var(--teal); }
   .blue .link-icon svg{ stroke: var(--blue); }
+  .amber .link-icon svg{ stroke: #F5B942; }
 
   .link-text{ flex:1; min-width:0; }
   .link-title{ font-weight:600; font-size:15px; margin-bottom:3px; }
   .link-desc{ font-size:12.5px; color: var(--mist); }
   .teal .link-title{ color: var(--teal); }
   .blue .link-title{ color: var(--blue); }
+  .amber .link-title{ color: #F5B942; }
 
   .link-arrow{ flex-shrink:0; color: var(--mist); font-size:16px; transition: transform .2s ease, color .2s ease; }
   .link-card:hover .link-arrow{ transform: translateX(3px); color: var(--ink); }
@@ -295,6 +315,20 @@
       <span class="link-text">
         <span class="link-title">AndersonAI</span>
         <span class="link-desc">Meu site — IA aplicada à contabilidade</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card amber" href="https://advlabcont.github.io/colecaocontabilebook/" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+      </span>
+      <span class="link-text">
+        <span class="link-title">Coleção Contábil<span class="badge-new">novo</span></span>
+        <span class="link-desc">E-books: Primeiros Passos na Contabilidade</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
