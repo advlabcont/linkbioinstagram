@@ -14,6 +14,7 @@
     --bg-card: #12181B;
     --teal: #34E8B0;
     --blue: #4F8FFF;
+    --amber: #F5B942;
     --ink: #F5F8F7;
     --mist: #8B9490;
     --border: rgba(245,248,247,0.09);
@@ -26,7 +27,7 @@
   body{
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     display:flex;
@@ -54,26 +55,13 @@
 
   .page{ position:relative; z-index:1; width:100%; max-width: 460px; }
 
-  /* status */
-  .status{
-    display:flex; align-items:center; justify-content:center; gap:8px;
-    font-family:'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing:0.14em; text-transform:uppercase;
-    color: var(--teal);
-    margin-bottom: 30px;
-  }
-  .status .dot{
-    width:6px; height:6px; border-radius:50%;
-    background: var(--teal); box-shadow: 0 0 8px var(--teal);
-    animation: pulse 2s ease-in-out infinite;
-  }
   @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.35;} }
 
   /* portrait with orbit ring + floating chips */
   .portrait-wrap{
     position: relative;
     width: 216px; height: 216px;
-    margin: 0 auto 20px;
+    margin: 18px auto 24px;
   }
   .ring{
     position:absolute; inset: -14px;
@@ -212,6 +200,7 @@
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 0.06em;
+    text-transform: uppercase;
     padding: 2px 7px;
     border-radius: 999px;
     margin-left: 8px;
@@ -228,14 +217,14 @@
   .link-icon svg{ width:21px; height:21px; }
   .teal .link-icon svg{ stroke: var(--teal); }
   .blue .link-icon svg{ stroke: var(--blue); }
-  .amber .link-icon svg{ stroke: #F5B942; }
+  .amber .link-icon svg{ stroke: var(--amber); }
 
   .link-text{ flex:1; min-width:0; }
-  .link-title{ font-weight:600; font-size:15px; margin-bottom:3px; }
-  .link-desc{ font-size:12.5px; color: var(--mist); }
+  .link-title{ display:block; font-weight:600; font-size:15px; margin-bottom:3px; }
+  .link-desc{ display:block; font-size:12.5px; color: var(--mist); }
   .teal .link-title{ color: var(--teal); }
   .blue .link-title{ color: var(--blue); }
-  .amber .link-title{ color: #F5B942; }
+  .amber .link-title{ color: var(--amber); }
 
   .link-arrow{ flex-shrink:0; color: var(--mist); font-size:16px; transition: transform .2s ease, color .2s ease; }
   .link-card:hover .link-arrow{ transform: translateX(3px); color: var(--ink); }
@@ -260,7 +249,7 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    .status .dot, .chip, .ring, .ring-outer{ animation: none; }
+    .chip, .ring, .ring-outer, .badge-new{ animation: none; }
     .link-card, .link-card::before, .link-arrow{ transition:none; }
   }
 </style>
@@ -329,6 +318,35 @@
       <span class="link-text">
         <span class="link-title">Coleção Contábil<span class="badge-new">novo</span></span>
         <span class="link-desc">E-books: Primeiros Passos na Contabilidade</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card teal" href="https://advlabcont.github.io/iasaladeaula/" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10 12 5 2 10l10 5 10-5z"/>
+          <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>
+        </svg>
+      </span>
+      <span class="link-text">
+        <span class="link-title">IA em Sala de Aula<span class="badge-new">novo</span></span>
+        <span class="link-desc">Curso para professores sobre IA na prática</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card blue" href="https://advlabcont.github.io/ia-do-zero-ao-trabalho/" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          <path d="M2 13h20"/>
+        </svg>
+      </span>
+      <span class="link-text">
+        <span class="link-title">IA do Zero ao Trabalho<span class="badge-new">novo</span></span>
+        <span class="link-desc">E-book para universitários: IA na prática</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
